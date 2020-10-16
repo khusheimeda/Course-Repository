@@ -1,0 +1,8 @@
+flask
+flask_login
+flask_user
+werkzeug
+openpyxl
+pymongo
+pandas
+flask_autoindex
