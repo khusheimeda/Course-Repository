@@ -1,0 +1,12 @@
+{% extends "base1.html" %}
+{% block content %}
+<div>
+    <p style="text-align: center;color: rgb(255, 250, 240); font-size: 150% ;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
+      Welcome, {{ username }}<br>
+      {% if role =='Student' %}
+        Branch: CSE <br>
+        Semester: {{ sem }}
+      {% endif %}
+    </p>
+  </div>
+{% endblock %}

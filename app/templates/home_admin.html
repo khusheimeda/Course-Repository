@@ -1,0 +1,25 @@
+{% extends "base1.html" %}
+{% block content %}	
+      <p style="text-align: center;color: rgb(255, 250, 240); font-size: 150% ;font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif">
+        WELCOME ADMIN
+      </p>
+{% endblock %}
+{% block footer %}
+	  <p>
+ 
+          <form action = "" method = "POST" enctype = "multipart/form-data">
+         <select name = 'howmany'>
+                  <option value="One">One</option>
+                  <option value="Many">Many</option>
+         </select>
+         <br><br>
+            <select name="uploadrole">
+					<option value="Student">Student</option>
+					<option value="Teacher">Teacher</option>
+            </select>
+            <br><br>
+            <input type="submit" value="Submit">
+            <br><br>
+      </form>
+      </p>
+{% endblock %}

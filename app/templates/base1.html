@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <title>
+    Home
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    div {
+      background-color: rgb(6, 11, 87);
+      width: auto;
+      border: 1px rgb(247, 238, 243);
+      padding: 1px;
+      margin: auto;
+    }
+
+    ul, #myUL {
+    list-style-type: none;
+    }
+
+    #myUL {
+      margin: 0;
+      padding: 0;
+    }
+
+    .caret {
+      cursor: pointer;
+      -webkit-user-select: none; /* Safari 3.1+ */
+      -moz-user-select: none; /* Firefox 2+ */
+      -ms-user-select: none; /* IE 10+ */
+      user-select: none;
+    }
+
+    .caret::before {
+      content: "\25B6";
+      color: black;
+      display: inline-block;
+      margin-right: 6px;
+    }
+
+    .caret-down::before {
+      -ms-transform: rotate(90deg); /* IE 9 */
+      -webkit-transform: rotate(90deg); /* Safari */
+      transform: rotate(90deg);  
+    }
+
+    .nested {
+      display: none;
+    }
+
+    .active {
+      display: block;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="/app/templates/css/bootstrap.min.css">
+</head>
+    <body>
+		<body style="background-color: rgb(255, 254, 242)">
+  
+		<a href="https://www.pes.edu/" target="_blank">
+		<p style="text-align: center">
+			<img src="http://universityadmission.education/wp-content/uploads/2016/02/PES-University-Bangalore.png" width="50%" height="50%">
+		</p>
+		</a>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <div class="container">
+                    {% include "flash.html" %}
+                    {% block content %}{% endblock %}
+                
+                <form action="/reset/password/<role>" method="GET">
+                    <input type="submit" value="Change Password" 
+                    name="Submit" id="frm1_submit" />
+                  </form>
+                </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        {% if current_user.is_authenticated %}
+                            <a href="{{ url_for('logout') }}"><input type="submit" value="Logout"></a>
+                        {% else %}
+                            <a href="{{ url_for('login') }}"><input type="submit" value="Login"></a>
+                        {% endif %}
+                    </ul>
+            </div>
+          </div>
+        </nav>
+      {% block footer %}{% endblock %}
+    </body>
+</html>

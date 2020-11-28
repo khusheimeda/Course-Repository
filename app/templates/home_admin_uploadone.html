@@ -1,0 +1,13 @@
+{% extends "base2.html" %}
+{% block footer %}	
+<br> <br>
+<form action = "" method = "POST"
+         enctype = "multipart/form-data">
+		 USERNAME: <input type="text" name="username" placeholder="Username" value="{{request.form.username}}"><br><br>
+		 CONFIRM USERNAME: <input type="text" name="confirm" placeholder="Confirm Username" value="{{request.form.username}}"><br><br>
+         <input type = "submit" value = "Upload"/>
+      </form>
+	  {% if error %}
+				<p class="error"><strong>Error:</strong> {{ error }}
+		  {% endif %}
+{% endblock %}

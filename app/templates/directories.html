@@ -1,0 +1,36 @@
+<!doctype html>
+{% extends "base2.html" %}
+<body>
+	{% block footer %}
+		<ul id="myUL">
+			<li><span class="caret">{{ tree.name }}</span>
+				<ul class="nested">
+					{%- for item in tree.children recursive %}
+					<li>
+						{%- if item.isDir -%} <!-- If Directory -->
+							<span class="caret">{{ item.name }}</span>
+						{%- else -%} <!-- Else -->
+							<a href="/home/show/{{role}}/{{item.path}}"> {{ item.name }}</a>
+						{%- endif %}
+						{%- if item.children -%} <!-- If it has children -->
+							<ul class="nested"> {{loop(item.children)}} </ul>
+						{%- endif %}
+					</li>
+					{%- endfor %}
+				</ul>
+			</li>
+		</ul>
+		<script>
+			const toggler = document.getElementsByClassName("caret");						
+			for (let i = 0; i < toggler.length; i++) {
+				toggler[i].addEventListener("click", function () {					
+					this.parentElement.querySelector(".nested").classList.toggle("active");
+					this.classList.toggle("caret-down");
+				});
+			}
+		</script>
+		{%  if role=='Anchor' %}
+			<button onclick="window.location.href = '/home/anchor/upload'">Upload File</button>
+		{% endif %}
+	{% endblock %}
+</body>

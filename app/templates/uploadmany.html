@@ -1,0 +1,31 @@
+{% extends "base2.html" %}
+{% block footer %}	
+<form action = "" method = "POST"
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         {% if role=='Anchor' %}
+         <br>
+            Where do you want to save the file?<br>
+            Enter Semester(eg: Semester_3):
+            <select name ="upsem" >
+                <option value="Semester_1">Semester_1</option>
+                <option value="Semester_2">Semester_2</option>
+                <option value="Semester_3">Semester_3</option>
+                <option value="Semester_4">Semester_4</option>
+                <option value="Semester_5">Semester_5</option>
+                <option value="Semester_6">Semester_6</option>
+                <option value="Semester_7">Semester_7</option>
+                <option value="Semester_8">Semester_8</option>
+            </select>
+                <br><br>
+             Enter Subject(eg "Sub_1"):
+            <input type="text" name="upsub" value = "{{upsub}}"><br><br>
+            <select name="material" >
+               <option value="Case_Studies">Case_Studies</option>
+               <option value="Course_Assessments">Course_Assessments</option>
+               <option value="Course_Material">Course_Material</option>
+            </select>
+         {% endif %}
+         <input type = "submit" value = "Upload"/>
+      </form>
+{% endblock %}

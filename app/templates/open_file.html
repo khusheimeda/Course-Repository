@@ -1,0 +1,11 @@
+{% extends "base2.html" %}
+{% block footer %}
+  <!-- <object data=filepath type="application/pdf" width="600" height="500">
+  <a href= {{destination}}>{{destination}}</a>
+</object> -->
+<br>
+
+<iframe src="http://localhost:5000/get-file/{{filepath}}" width="80%" height="500px">
+
+</iframe>
+{% endblock %}

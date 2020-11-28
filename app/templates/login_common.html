@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Login
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <h1  style = "text-align: center; font-family: Times, serif; font-size: 300%; color:darkred">
+            LOGIN
+        </h1>
+        <style>
+            div {
+                background-color:rgb(228, 218, 233);
+                width: 250px;
+                border: 2px solid black;
+                padding: 50px;
+                margin: auto;
+            }  
+            a:link{
+                color: beige;
+                background-color: transparent;
+                text-decoration: underline;
+            }     
+            a:visited{
+                color:bisque;
+                background-color: transparent;
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body style ="background: url(https://static.careers360.mobi/media/article_images/2017/12/26/pes-university.jpg) ;background-repeat: no-repeat; background-size: cover"><!--style="background: rgb(238, 219, 222)"-->
+        <br><br>
+        <div>
+            <form action="" method="POST" name="form">
+            <p style="text-align: center">
+			<select name="role" >
+                                <option value="Student">Student</option>
+                                <option value="Teacher">Teacher</option>
+                                <option value="Anchor">Anchor Teacher</option>
+                                <option value="Admin">Admin</option>
+                        </select>
+                        <br>
+					{{ form.hidden_tag() }}<br></p>
+                    <label class="control-label" for="username"><h3 style="text-align: center">Username</h3></label>
+                    <p style="text-align: center">{{ form.username }}<br></p>
+                    <label class="control-label" for="password"><h3 style="text-align: center">Password</h3></label>
+                    <p style="text-align: center">{{ form.password }}<br></p>
+                <p style="text-align: center"><button class="btn btn-default" type="submit">Submit</button></p>
+        </form>
+		{% if error %}
+				<p class="error"><strong>Error:</strong> {{ error }}
+			{% endif %}
+        </div>
+        <p title="PES"; style=" font-display: Verdana; color: whitesmoke ; text-align: center">
+            To visit the college website, click on the link below.<br>
+           <a href="https://www.pes.edu/" target="_blank" >PES University</a>
+           <br> <br>
+        </p>
+    </body>
+</html>
